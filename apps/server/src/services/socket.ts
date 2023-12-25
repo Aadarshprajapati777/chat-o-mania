@@ -4,7 +4,16 @@ class SocketService{
     private _io:Server;
     constructor(){
         console.log('SocketService constructor');
-        this._io=new Server();
+        this._io=new Server(
+            {
+                cors:{
+                    allowedHeaders: ["*"],
+                    origin:'*',
+                    methods:['GET','POST']
+                }
+            }
+
+        );
     }
 
 

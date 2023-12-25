@@ -12,14 +12,7 @@ interface ISocketContext {
 }
 
 
-useEffect(() => {
-    const _socket = io("http://localhost:2500");
 
-    return () => {
-        _socket.disconnect();
-    }
-}
-,[])
 
 
 
@@ -33,6 +26,17 @@ export const SocketProvider: React.FC<SocketProviderProps> = ({children}) => {
         console.log("send message function",message)
     }
     ,[])
+
+    useEffect(() => {
+        const _socket = io("http://localhost:2500");
+    
+        return () => {
+            _socket.disconnect();
+        }
+    }
+    ,[])
+    
+    
     
 
     return (
