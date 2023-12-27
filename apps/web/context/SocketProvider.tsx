@@ -22,7 +22,7 @@ const SocketContext = React.createContext<ISocketContext | null>(null);
 
 export const useSocket = () => {
     const state= useContext(SocketContext);
-    if (!state) throw new Error("SocketProvider not found");
+    if (!state) throw new Error("SocketProvider us not found");
     return state;
 }
 
